@@ -8,4 +8,4 @@ COPY requirements.txt .
 
 RUN pip install -r requirements.txt
 
-CMD ["python", "kafkaConsumer.py"]
+CMD ["python", "-u", "kafkaConsumer.py"]
