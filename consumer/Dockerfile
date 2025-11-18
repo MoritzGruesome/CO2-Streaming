@@ -2,7 +2,7 @@ FROM python:3.12-slim
 
 WORKDIR /app
 
-COPY consumer/kafkaConsumer.py .
+COPY kafkaConsumer.py .
 
 COPY requirements.txt .
 

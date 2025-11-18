@@ -27,17 +27,20 @@ services:
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
 
   producer:
+
     build: 
-      context: .
-      dockerfile: ./producer/Dockerfile
+      context: ./producer
+      dockerfile: ./Dockerfile
+    environment:
+      DEBUG: "False"
 
     depends_on:
       - kafka
   
   consumer:
     build:
-      context: .
-      dockerfile: ./consumer/Dockerfile
+      context: ./consumer
+      dockerfile: ./Dockerfile
     
     depends_on:
       - producer
